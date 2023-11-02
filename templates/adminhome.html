@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home - ALTOS TECHNOLOGIES</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+ 
+</head>
+
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>ALTOS TECHNOLOGIES</h1>
+        <span></span>
+      </a>
+
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="" class="active" onclick="scrollToSection('home')">Home</a></li>
+          <li><a href="#" onclick="scrollToSection('about')">About</a></li>
+          <li><a href="#" onclick="scrollToSection('services')">Services</a></li>
+          <li><a href="#" onclick="scrollToSection('portfolio')">Portfolio</a></li>
+          <li><a href="#" onclick="scrollToSection('team')">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li class="dropdown has-dropdown">
+              <a href="#"><span>Training</span> <i class="bi bi-chevron-down"></i></a>
+              <ul class="dd-box-shadow">
+                  <li><a href="#">Python</a></li>
+                  <li><a href="#">Java</a></li>
+                  <li><a href="#">Dotnet</a></li>
+                  <li><a href="#">Fullstack</a></li>
+              </ul>
+          </li>
+          <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+
+      <a class="btn-getstarted" href="">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+  <main id="main">
+
+    <!-- Hero Section - Home Page -->
+    <section id="hero" class="hero">
+
+      <img src="{% static  'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container mt-4">
+        <div class="jumbotron">
+          <h1 class="display-4" style="color: brown;">Welcome to Altos Technologies</h1>
+          <p class="lead" style="color: brown;">Providing the Best IT Services</p>
+          <hr class="my-4">
+          <p>Please use the links in the navigation to access various features.</p>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Select Theme</h5>
+            <form method="post" action="{% url 'update_theme' %}">
+              {% csrf_token %}
+              <input type="hidden" name="user_id" value="{{ user.id }}">
+              <div class="form-group">
+                <label for="theme">Choose a theme:</label>
+                <select name="theme" id="theme" class="form-control">
+                  <option value="default">Default</option>
+                  <option value="christmas">Christmas</option>
+                  <option value="onam">Onam</option>
+                  <!-- Add more theme options as needed -->
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Apply Theme</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+
+    </section><!-- End Hero Section -->
+
+    <!-- Clients Section - Home Page -->
+  
+
+
+
+
+   <!-- Vendor JS Files -->
+   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+   <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+ 
+   <!-- Template Main JS File -->
+   <script src="{% static 'assets/js/main.js' %}"></script>
+ 
+   <!-- Your existing HTML code -->
+   <script>
+     function scrollToSection(sectionId) {
+       const target = document.getElementById(sectionId);
+       const offset = target.offsetTop;
+     
+       window.scrollTo({
+         top: offset,
+         behavior: 'smooth'
+       });
+     }
+     </script>
+     </body>
+     </html>
+     
